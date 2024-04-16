@@ -2,11 +2,16 @@ spring:
   jpa:
     show-sql: true
   datasource:
-    url: ${DB_URL}
+    url: jdbc:mariadb://svc.sel5.cloudtype.app:31354/lolweb
     hikari:
-      username: ${DB_USERNAME}
-      password: ${DB_PASSWORD}
-      driver-class-name: org.mariadb.jdbc.Driver
+        username: root
+        password: 12011201
+        driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://svc.sel5.cloudtype.app:30196/LoLItemSimulation
+#    hikari:
+#      username: root
+#      password: 20231004
+#      driver-class-name: org.mariadb.jdbc.Driver
   devtools:
     livereload:
       enabled : true
@@ -18,3 +23,10 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
     cache: false
+app:
+  firebase-configuration-file: ./firebaseServiceAccountKey.json
+  firebase-bucket: lolweb-ae249.appspot.com
+  upload-dir: /home/
+
+server:
+  port: 80
